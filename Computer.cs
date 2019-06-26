@@ -17,7 +17,8 @@ namespace RPSLS
                 {
 
                 }*/
-                return "a";
+                Random rnd = new Random();
+                return Program.moves[rnd.Next(0, 4)];
             });
         }
     }
