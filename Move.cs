@@ -1,39 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Linq;
 namespace RPSLS
 {
     class Move
     {
-        private List<int> moves;
+        public List<String> moves;
         private int move;
+
+        public Move()
+        {
+            
+        }
+
+        public Move(Func<String> m)
+        {
+            this.moves = new List<String> { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+            Console.WriteLine($"Choose From one of the Following {moves[0]} {moves[1]} {moves[2]} {moves[3]} {moves[4]}");
+            setMove(m());
+
+            while (! (this.move >= 0 && this.move <= 4) )
+            {
+                Console.WriteLine($"Invalid Choose From one of the Following {moves[0]} {moves[1]} {moves[2]} {moves[3]} {moves[4]}");
+                setMove(Console.ReadLine());
+            }
+        }
 
         public void setMove(String move)
         {
             switch (move)
             {
-                case "R":
-                case "r":
+                case "Rock":
+                case "rock":
                     this.move = 0;
                     break;
-                case "P":
-                case "p":
+                case "Paper":
+                case "paper":
                     this.move = 1;
                     break;
-                case "S":
-                case "s":
+                case "Scissors":
+                case "scissors":
                     this.move = 2;
                     break;
-                case "L":
-                case "l":
+                case "Lizard":
+                case "lizard":
                     this.move = 3;
                     break;
-                case "Sp":
-                case "sp":
+                case "Spock":
+                case "spock":
                     this.move = 4;
                     break;
+                default:
+                    this.move = -1;
+                    break;
             }
+            
         }
 
 
@@ -42,32 +64,110 @@ namespace RPSLS
             return this.move;
         }
 
-        private bool Rock()
+        private int Rock()
         {
+            switch (this.move)
+            {
+                case 0:
+                    return 0;
+                    break;
+                case 1:
+                    return -1;
+                    break;
+                case 4:
+                    return -1;
+                    break;
+                default:
+                    return 1;
+                    break;
+            }
 
+            return 1;
         }
 
-        private bool Paper()
+        private int Paper()
         {
+            switch (this.move)
+            {
+                case 1:
+                    return 0;
+                    break;
+                case 2:
+                    return -1;
+                    break;
+                case 3:
+                    return -1;
+                    break;
 
+                default:
+                    return 1;
+            }
         }
 
-        private bool Scissors()
+        private int Scissors()
         {
-
+            switch (this.move)
+            {
+                case 2:
+                    return 0;
+                    break;
+                case 0:
+                    return -1;
+                    break;
+                case 4:
+                    return -1;
+                    break;
+                default:
+                    break;
+            }
+            return 1;
         }
 
-        private bool Lizard()
+        private int Lizard()
         {
+            switch (this.move)
+            {
+                case 3:
+                    return 0;
+                    break;
+                case 0:
+                    return -1;
+                    break;
+                case 2:
+                    return -1;
+                    break;
+                case 4:
+                    return -1;
+                    break;
+                default:
+                    break;
+            }
 
+            return 1;
         }
 
-        private bool Spock()
+        private int Spock()
         {
+            switch (this.move)
+            {
+                case 4:
+                    return 0;
+                    break;
+                case 3:
+                    return -1;
+                    break;
+                case 1:
+                    return -1;
+                    break;
+                default:
+                    
+                    break;
+            }
 
+            return 1;
         }
 
-        public bool CheckWin(Move p2)
+        public int checkWin(Move p2)
         {
             switch (p2.getMove())
             {
@@ -84,7 +184,7 @@ namespace RPSLS
                 default:
                     break;
             }
-            return true;
+            return -1;
         }
     }
 }

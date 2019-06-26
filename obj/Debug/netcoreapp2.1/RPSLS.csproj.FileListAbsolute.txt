@@ -1,0 +1,11 @@
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\bin\Debug\netcoreapp2.1\RPSLS.deps.json
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\bin\Debug\netcoreapp2.1\RPSLS.runtimeconfig.json
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\bin\Debug\netcoreapp2.1\RPSLS.runtimeconfig.dev.json
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\bin\Debug\netcoreapp2.1\RPSLS.dll
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\bin\Debug\netcoreapp2.1\RPSLS.pdb
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\obj\Debug\netcoreapp2.1\RPSLS.csprojAssemblyReference.cache
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\obj\Debug\netcoreapp2.1\RPSLS.csproj.CoreCompileInputs.cache
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\obj\Debug\netcoreapp2.1\RPSLS.AssemblyInfoInputs.cache
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\obj\Debug\netcoreapp2.1\RPSLS.AssemblyInfo.cs
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\obj\Debug\netcoreapp2.1\RPSLS.dll
+C:\Users\Vincent\source\repos\RPSLS\RPSLS\obj\Debug\netcoreapp2.1\RPSLS.pdb

@@ -10,10 +10,33 @@ namespace RPSLS
         protected int id;
         protected Move currentMove;
 
-        public void win()
-        {
-            Console.WriteLine("Player {0} Wins!", this.id);
+        public Player(int id) {
+            this.id = id;
         }
 
+        public void winRound()
+        {
+            this.wins++;
+        }
+        public bool win()
+        {
+            Console.WriteLine("Player {0} Wins!", this.id);
+            return true;
+        }
+
+        public bool checkWin()
+        {
+            if (wins >= 2)
+                return win();
+
+            return false;
+        }
+        
+        public Move getMove()
+        {
+            return currentMove;
+        }
+
+        public virtual void makeMove() { }
     }
 }
