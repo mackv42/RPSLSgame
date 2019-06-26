@@ -12,13 +12,15 @@ namespace RPSLS
         {
             this.currentMove = new Move(() =>
             {
-                Thread.Sleep(1000);
+                Console.WriteLine($"Its Your Turn Player {this.id}");
+                Thread.Sleep(2000);
                 /*switch (Math.rand())
                 {
 
                 }*/
                 Random rnd = new Random();
-                return Program.moves[rnd.Next(0, 4)];
+                this.moveString = Program.moves[rnd.Next(0, 4)];
+                return moveString;
             });
         }
     }

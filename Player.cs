@@ -9,6 +9,7 @@ namespace RPSLS
         protected int wins;
         protected int id;
         protected Move currentMove;
+        protected String moveString;
 
         public Player(int id) {
             this.id = id;
@@ -20,6 +21,8 @@ namespace RPSLS
         }
         public bool win()
         {
+            System.Threading.Thread.Sleep(1000);
+            Console.Clear();
             Console.WriteLine("Player {0} Wins!", this.id);
             return true;
         }
@@ -35,6 +38,11 @@ namespace RPSLS
         public Move getMove()
         {
             return currentMove;
+        }
+
+        public String getMoveString()
+        {
+            return this.moveString;
         }
 
         public virtual void makeMove() { }

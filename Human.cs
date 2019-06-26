@@ -11,7 +11,10 @@ namespace RPSLS
         {
             this.currentMove = new Move(() => {
                 Console.Write("Player {0}: ", this.id);
-                return Console.ReadLine();
+                this.moveString = Console.ReadLine();
+                System.Threading.Thread.Sleep(500);
+                Console.Clear();
+                return moveString;
             });
         }
     }

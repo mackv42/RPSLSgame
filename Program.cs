@@ -6,6 +6,7 @@ namespace RPSLS
     class Program
     {
        public static List<String> moves = new List<String> {"Rock", "Paper", "Scissors", "Lizard", "Spock"};
+        public static Dictionary<String, String> winStrings = new Dictionary<String, String> ();
     public static void loopUntilTrue(Func<bool> f)
         {
             while(!f()){}
@@ -21,17 +22,21 @@ namespace RPSLS
             int winner = 0;
             while(winner == 0)
             {
+                
                 p1.makeMove();
+                
                 p2.makeMove();
                 int currentWinner = p1.getMove().checkWin(p2.getMove());
 
                 if (currentWinner == -1)
                 {
+                    Console.WriteLine("{0} {1} {2}", p1.getMoveString(), winStrings[p1.getMoveString()+p2.getMoveString()], p2.getMoveString());
                     Console.WriteLine("Player 1 won this round");
                     p1.winRound();
                 }
                 else if(currentWinner == 1)
                 {
+                    Console.WriteLine("{0} {1} {2}", p2.getMoveString(), winStrings[p2.getMoveString() + p1.getMoveString()], p1.getMoveString());
                     Console.WriteLine("Player 2 won this round");
                     p2.winRound();
                 }
@@ -55,6 +60,19 @@ namespace RPSLS
 
         static void Main(string[] args)
         {
+            winStrings.Add("RockLizard", "Smashes");
+            winStrings.Add("RockScissors", "Smashes");
+            winStrings.Add("PaperRock", "Covers");
+            winStrings.Add("PaperSpock", "Disproves");
+            winStrings.Add("ScissorsPaper", "Cuts");
+            winStrings.Add("ScissorsLizard", "Decapitates");
+            winStrings.Add("LizardSpock", "Poisons");
+            winStrings.Add("LizardPaper", "Eats");
+            winStrings.Add("SpockRock", "Vaporizes");
+            winStrings.Add("SpockScissors", "Smashes");
+
+
+
             Console.WriteLine("How Many Players?");
 
             int players = -1;
