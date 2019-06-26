@@ -31,18 +31,12 @@ namespace RPSLS
         {
             try
             {
-                String s = p1 + p2;
-                s = winStrings[s];
-
+                String s = winStrings[p1 + p2];
                 return true;
             }
             catch(System.Collections.Generic.KeyNotFoundException E)
             {
                 return false;
-            }
-            finally
-            {
-                
             }
         }
     public static void loopUntilTrue(Func<bool> f)
