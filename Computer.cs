@@ -10,18 +10,11 @@ namespace RPSLS
         public Computer(int id) : base(id) { }
         public override void makeMove()
         {
-            this.currentMove = new Move(() =>
-            {
-                Console.WriteLine($"Its Your Turn Player {this.id}");
-                Thread.Sleep(2000);
-                /*switch (Math.rand())
-                {
+            Console.WriteLine($"Its Your Turn Player {this.id}");
+            Thread.Sleep(2000);
+            Random rnd = new Random();
+            this.moveString = Program.moves[rnd.Next(0, 4)];
 
-                }*/
-                Random rnd = new Random();
-                this.moveString = Program.moves[rnd.Next(0, 4)];
-                return moveString;
-            });
         }
     }
 }

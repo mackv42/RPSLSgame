@@ -8,7 +8,7 @@ namespace RPSLS
     {
         protected int wins;
         protected int id;
-        protected Move currentMove;
+
         protected String moveString;
 
         public Player(int id) {
@@ -35,11 +35,6 @@ namespace RPSLS
             return false;
         }
         
-        public Move getMove()
-        {
-            return currentMove;
-        }
-
         public String getMoveString()
         {
             return this.moveString;
