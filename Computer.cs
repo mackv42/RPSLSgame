@@ -13,7 +13,7 @@ namespace RPSLS
             Console.WriteLine($"Its Your Turn Player {this.id}");
             Thread.Sleep(2000);
             Random rnd = new Random();
-            this.moveString = Program.moves[rnd.Next(0, 4)];
+            this.moveString = Game.moves[rnd.Next(0, 4)];
 
         }
     }

@@ -9,11 +9,11 @@ namespace RPSLS
         public Human(int id): base(id){}
         public override void makeMove()
         {
-            Program.loopUntilTrue(() => {
-                Console.WriteLine($"Choose From one of the Following {Program.moves[0]} {Program.moves[1]} {Program.moves[2]} {Program.moves[3]} {Program.moves[4]}");
+            Game.loopUntilTrue(() => {
+                Console.WriteLine($"Choose From one of the Following {Game.moves[0]} {Game.moves[1]} {Game.moves[2]} {Game.moves[3]} {Game.moves[4]}");
                 Console.Write("Player {0}: ", this.id);
                 this.moveString = Console.ReadLine().ToLower();
-                return Program.validateInput(this.moveString);
+                return Game.validateInput(this.moveString);
             });
             
             System.Threading.Thread.Sleep(500);
