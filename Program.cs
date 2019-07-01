@@ -7,7 +7,8 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            new Game();
+            Game g = new Game();
+            g.startGame();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace RPSLS
     {
         public static List<String> moves = new List<String> { "rock", "paper", "scissors", "lizard", "spock" };
         public static Dictionary<String, String> winStrings = new Dictionary<String, String>();
-
+   
         public Game()
         {
             winStrings.Add("rocklizard", "Smashes");
@@ -21,7 +21,10 @@ namespace RPSLS
             winStrings.Add("lizardpaper", "Eats");
             winStrings.Add("spockrock", "Vaporizes");
             winStrings.Add("spockscissors", "Smashes");
+        }
 
+        public void startGame()
+        {
             loopUntilTrue(() =>
             {
                 Console.WriteLine("How Many Players?");
