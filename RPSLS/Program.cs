@@ -8,7 +8,7 @@ namespace RPSLS
         static void Main(string[] args)
         {
             Game g = new Game();
-            g.startGame();
+            g.StartGame();
         }
     }
 }

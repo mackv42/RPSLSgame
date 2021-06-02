@@ -8,7 +8,7 @@ namespace RPSLS
     class Computer : Player
     {
         public Computer(int id) : base(id) { }
-        public override void makeMove()
+        public override void MakeMove()
         {
             Console.WriteLine($"Its Your Turn Player {this.id}");
             Thread.Sleep(2000);

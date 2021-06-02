@@ -23,14 +23,14 @@ namespace RPSLS
             winStrings.Add("spockscissors", "Smashes");
         }
 
-        public void startGame()
+        public void StartGame()
         {
-            loopUntilTrue(() =>
+            LoopUntilTrue(() =>
             {
                 Console.WriteLine("How Many Players?");
 
                 int players = -1;
-                loopUntilTrue(() =>
+                LoopUntilTrue(() =>
                 {
                     try
                     {
@@ -52,23 +52,23 @@ namespace RPSLS
                 if (players == 1)
                 {
                     Console.WriteLine("Human Player1 vs. CPU Player2");
-                    playGame(new Human(1), new Computer(2));
+                    PlayGame(new Human(1), new Computer(2));
                 }
                 else if (players == 2)
                 {
                     Console.WriteLine("Human Player1 vs. Human Player2");
-                    playGame(new Human(1), new Human(2));
+                    PlayGame(new Human(1), new Human(2));
                 }
                 else
                 {
                     Console.WriteLine("CPU Player1 vs. CPU Player2");
-                    playGame(new Computer(1), new Computer(2));
+                    PlayGame(new Computer(1), new Computer(2));
                 }
 
-                return !yesNo("Would You like to play Again?");
+                return !YesNo("Would You like to play Again?");
             });
         }
-        public static bool yesNo(String question)
+        public static bool YesNo(String question)
         {
             string answer = ".";
             while (true)
@@ -89,11 +89,11 @@ namespace RPSLS
         }
 
 
-        public static void loopUntilTrue(Func<bool> f)
+        public static void LoopUntilTrue(Func<bool> f)
         {
             while (!f()) { }
         }
-        public static bool validateInput(String s)
+        public static bool ValidateInput(String s)
         {
             for (int i = 0; i < moves.Count; i++)
             {
@@ -105,7 +105,7 @@ namespace RPSLS
 
             return false;
         }
-        private bool checkWin(String p1, String p2)
+        private bool CheckWin(String p1, String p2)
         {
             try
             {
@@ -117,40 +117,40 @@ namespace RPSLS
                 return false;
             }
         }
-        private int playGame(Player p1, Player p2)
+        private int PlayGame(Player p1, Player p2)
         {
             int winner = 0;
             while (winner == 0)
             {
 
-                p1.makeMove();
-                p2.makeMove();
+                p1.MakeMove();
+                p2.MakeMove();
 
-                bool p1Winner = checkWin(p1.getMoveString(), p2.getMoveString());
-                bool p2Winner = checkWin(p2.getMoveString(), p1.getMoveString());
+                bool p1Winner = CheckWin(p1.MoveString(), p2.MoveString());
+                bool p2Winner = CheckWin(p2.MoveString(), p1.MoveString());
 
                 if (p1Winner)
                 {
-                    Console.WriteLine("{0} {1} {2}", p1.getMoveString(), winStrings[p1.getMoveString() + p2.getMoveString()], p2.getMoveString());
+                    Console.WriteLine("{0} {1} {2}", p1.MoveString(), winStrings[p1.MoveString() + p2.MoveString()], p2.MoveString());
                     Console.WriteLine("Player 1 won this round");
-                    p1.winRound();
+                    p1.WinRound();
                 }
                 else if (p2Winner)
                 {
-                    Console.WriteLine("{0} {1} {2}", p2.getMoveString(), winStrings[p2.getMoveString() + p1.getMoveString()], p1.getMoveString());
+                    Console.WriteLine("{0} {1} {2}", p2.MoveString(), winStrings[p2.MoveString() + p1.MoveString()], p1.MoveString());
                     Console.WriteLine("Player 2 won this round");
-                    p2.winRound();
+                    p2.WinRound();
                 }
                 else
                 {
                     Console.WriteLine("Tie Match!");
                 }
 
-                if (p1.checkWin())
+                if (p1.CheckWin())
                 {
                     winner = 1;
                 }
-                if (p2.checkWin())
+                if (p2.CheckWin())
                 {
                     winner = 2;
                 }

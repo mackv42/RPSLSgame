@@ -15,11 +15,11 @@ namespace RPSLS
             this.id = id;
         }
 
-        public void winRound()
+        public void WinRound()
         {
             this.wins++;
         }
-        public bool win()
+        public bool Win()
         {
             System.Threading.Thread.Sleep(1000);
             Console.Clear();
@@ -27,19 +27,19 @@ namespace RPSLS
             return true;
         }
 
-        public bool checkWin()
+        public bool CheckWin()
         {
             if (wins >= 2)
-                return win();
+                return Win();
 
             return false;
         }
         
-        public String getMoveString()
+        public String MoveString()
         {
             return this.moveString;
         }
 
-        public virtual void makeMove() { }
+        public virtual void MakeMove() { }
     }
 }
