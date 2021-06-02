@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vincent\\source\\repos\\RPSLS\\RPSLS\\RPSLS.csproj",
+      "projectUniqueName": "C:\\Users\\Vincent\\Desktop\\RPSLS\\RPSLSgame\\RPSLS\\RPSLS.csproj",
       "projectName": "RPSLS",
-      "projectPath": "C:\\Users\\Vincent\\source\\repos\\RPSLS\\RPSLS\\RPSLS.csproj",
+      "projectPath": "C:\\Users\\Vincent\\Desktop\\RPSLS\\RPSLSgame\\RPSLS\\RPSLS.csproj",
       "packagesPath": "C:\\Users\\Vincent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vincent\\source\\repos\\RPSLS\\RPSLS\\obj\\",
+      "outputPath": "C:\\Users\\Vincent\\Desktop\\RPSLS\\RPSLSgame\\RPSLS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -729,6 +729,7 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
